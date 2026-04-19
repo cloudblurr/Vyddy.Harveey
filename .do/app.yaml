@@ -1,0 +1,42 @@
+name: harveey-vyddy
+region: nyc
+
+services:
+  - name: web
+    source_dir: /
+    github:
+      repo: cloudblurr/harveey-vyddy
+      branch: main
+      deploy_on_push: true
+    build_command: npm run build
+    run_command: npm start
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-1gb
+    http_port: 3000
+    routes:
+      - path: /
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: AGENT_ENDPOINT
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+      - key: AGENT_API_KEY
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+      - key: PYTHON_COMMAND
+        value: python3
+        scope: RUN_AND_BUILD_TIME
+      - key: USERNAME
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+      - key: PASSWORD
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+
+domains:
+  - domain: vyddy.world
+    type: PRIMARY
+  - domain: www.vyddy.world
+    type: ALIAS

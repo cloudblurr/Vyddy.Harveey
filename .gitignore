@@ -1,0 +1,18 @@
+node_modules/
+.next/
+out/
+.build/
+.DS_Store
+*.log
+.env.local
+.env.*.local
+dist/
+.venv/
+venv/
+__pycache__/
+python/__pycache__/
+.harveey-history.json
+
+# Instagram session files (sensitive)
+scripts/.ig_session.json
+.ig_session.json

@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #050505;
+    color: white;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(255, 235, 59, 0.3), 0 0 40px rgba(255, 235, 59, 0.15);
+  }
+
+  .neon-glow-lg {
+    box-shadow: 0 0 40px rgba(255, 235, 59, 0.4), 0 0 80px rgba(255, 235, 59, 0.2);
+  }
+
+  .neon-text {
+    color: #ffeb3b;
+    text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+  }
+
+  .glass-card {
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 235, 59, 0.08);
+  }
+
+  .gradient-bg {
+    background: radial-gradient(circle at top, rgba(255, 235, 59, 0.08), transparent 40%),
+      linear-gradient(180deg, #020202 0%, #090909 100%);
+  }
+}
+
+/* Custom checkbox */
+.media-checkbox:checked {
+  accent-color: #ffeb3b;
+}
+
+/* Progress bar animation */
+@keyframes progress-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.progress-shine {
+  background: linear-gradient(
+    90deg,
+    #ffeb3b 0%,
+    #ffff72 40%,
+    #ffeb3b 60%,
+    #fdd835 100%
+  );
+  background-size: 200% auto;
+  animation: progress-shine 2s linear infinite;
+}
+
+/* Scan line animation */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 235, 59, 0.3), transparent);
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Pulse animation for active states */
+@keyframes neon-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 235, 59, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(255, 235, 59, 0.6); }
+}
+
+.neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Grid pattern overlay */
+.grid-overlay {
+  background-image: 
+    linear-gradient(rgba(255, 235, 59, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 235, 59, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

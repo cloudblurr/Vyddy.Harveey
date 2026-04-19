@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harveey Vyddy</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Harveey Vyddy</span>
+      </div>
+      <div class="status" id="status">
+        <span class="status-dot"></span>
+        <span class="status-text">Connected</span>
+      </div>
+    </header>
+
+    <!-- URL Input Section -->
+    <section class="section">
+      <label class="label">Paste URLs (one per line)</label>
+      <textarea 
+        id="urlInput" 
+        class="url-input" 
+        placeholder="https://instagram.com/p/...&#10;https://x.com/user/status/...&#10;https://tiktok.com/@user/video/..."
+        rows="6"
+      ></textarea>
+      <div class="input-actions">
+        <button id="pasteBtn" class="btn btn-secondary">
+          <span class="btn-icon">📋</span> Paste from Clipboard
+        </button>
+        <button id="clearBtn" class="btn btn-ghost">Clear</button>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="section">
+      <label class="label">Quick Actions</label>
+      <div class="quick-actions">
+        <button id="extractPageBtn" class="btn btn-primary btn-block">
+          <span class="btn-icon">🔗</span> Extract Current Page
+        </button>
+        <button id="sendSelectedBtn" class="btn btn-primary btn-block" disabled>
+          <span class="btn-icon">📤</span> Send <span id="urlCount">0</span> URLs to Harveey Vyddy
+        </button>
+      </div>
+    </section>
+
+    <!-- Detected Media -->
+    <section class="section" id="detectedSection" style="display: none;">
+      <label class="label">Detected Media on Page</label>
+      <div class="detected-list" id="detectedList"></div>
+      <button id="sendDetectedBtn" class="btn btn-primary btn-block">
+        <span class="btn-icon">📤</span> Send All to Harveey Vyddy
+      </button>
+    </section>
+
+    <!-- Settings -->
+    <section class="section">
+      <label class="label">Harveey Vyddy App URL</label>
+      <input 
+        type="text" 
+        id="appUrl" 
+        class="text-input" 
+        placeholder="http://localhost:3000"
+        value="http://localhost:3000"
+      >
+      <button id="saveSettingsBtn" class="btn btn-ghost btn-small">Save Settings</button>
+    </section>
+
+    <!-- History Preview -->
+    <section class="section">
+      <div class="section-header">
+        <label class="label">Recent Downloads</label>
+        <button id="viewHistoryBtn" class="btn btn-ghost btn-small">View All</button>
+      </div>
+      <div class="history-list" id="historyList">
+        <div class="history-empty">No downloads yet</div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>Harveey Vyddy v1.0.0</span>
+      <a href="#" id="openAppBtn">Open App</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

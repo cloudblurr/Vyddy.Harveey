@@ -1,0 +1,40 @@
+{
+  "name": "harveey-vyddy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.10.9",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@playwright/test": "^1.59.1",
+    "archiver": "^5.3.0",
+    "axios": "^1.5.0",
+    "cheerio": "^1.0.2",
+    "framer-motion": "^10.12.16",
+    "next": "14.2.4",
+    "ninexbuddy-scraper": "^1.0.6",
+    "playwright": "^1.59.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-icons": "^4.11.0",
+    "source-scraper": "^1.2.14",
+    "supports-color": "^10.2.2",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@types/archiver": "^5.1.0",
+    "@types/node": "^20.14.3",
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "typescript": "^5.6.2",
+    "vitest": "^4.1.4"
+  }
+}
