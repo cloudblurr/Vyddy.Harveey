@@ -12,6 +12,7 @@ export interface DownloadItem {
   error?: string;
   sourceUrl?: string;
   platform?: string;
+  source?: string; // "extension" | "app" | "agent"
 }
 
 export interface ScrapeResult {

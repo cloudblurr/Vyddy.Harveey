@@ -92,7 +92,7 @@ function triggerDownload(blob: Blob, filename: string) {
 // Convert base64 string to Blob
 function base64ToBlob(base64: string, contentType: string): Blob {
   const byteChars = atob(base64);
-  const byteArrays: Uint8Array[] = [];
+  const byteArrays: BlobPart[] = [];
   for (let offset = 0; offset < byteChars.length; offset += 512) {
     const slice = byteChars.slice(offset, offset + 512);
     const byteNumbers = new Array(slice.length);
@@ -686,7 +686,6 @@ export default function DownloadQueue({
                 borderRadius="12px"
                 p={3}
                 _hover={{ borderColor: "#2a2a2a" }}
-                transition="border-color 0.2s"
               >
                 <Flex align="center" gap={3}>
                   {/* Thumbnail */}
